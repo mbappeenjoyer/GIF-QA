@@ -8,7 +8,7 @@ documented here. For the entire report, kindly refer to the report.pdf file incl
 
 ## Usage
 
-Download the model weights from the drive link mentioned in ckpt.md in the checkpoints folder. Then, for evaluation kindly use the notebook provided in eval.
+Download the model weights from the drive link mentioned in ckpt.md in the checkpoints folder. Then, for evaluation kindly refer to the notebook provided in eval.
 
 ## Synthetic Data Generation
 
