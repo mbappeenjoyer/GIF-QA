@@ -62,7 +62,7 @@ We implemented the Masked Video Modelling loss that was described in the paper. 
 
 ![eqn](https://github.com/user-attachments/assets/6da7178d-9486-4961-886b-1b0908ac182b)
 
-We then consider the last hidden state of the LLM, and the loss is then computed as the RMSE loss obtained from the unmasked positions of the image tokens, i.e,
+We then consider the last hidden state of the LLM, and the loss is then computed as the RMSE loss obtained from the unmasked positions of the image tokens. This is added to the standard cross entropy loss.
 
 
 
