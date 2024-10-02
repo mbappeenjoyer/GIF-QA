@@ -29,7 +29,7 @@ parts-of-speech tagging. The broad categories include:
 Using this approach, we were able to generate 72k question-answer pairs (owing to time
 constraints, we were unable to generate QA pairs from all the GIFs)
 
-## GIF Frame Processing Pipeline
+## GIF Processing Pipeline
 
 ![clipcut drawio](https://github.com/user-attachments/assets/cfc6dcb9-0bb4-4d78-974a-cada3e36980a)
 
