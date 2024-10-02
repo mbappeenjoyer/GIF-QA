@@ -31,6 +31,8 @@ constraints, we were unable to generate QA pairs from all the GIFs)
 
 ## GIF Frame Processing Pipeline
 
+![clipcut drawio](https://github.com/user-attachments/assets/cfc6dcb9-0bb4-4d78-974a-cada3e36980a)
+
 Cutting down on the number of frames cleverly can allow us to increase efficiency and also possibly introduce other multimodal LLMs into the picture, at least for valuable inference on these frames, while not
 losing out on valuable information or including irrelevant frames. In this light, we propose CLIP-Cut, an efficient pipeline for keyframe extraction from GIFs. CLIP-Cut is essentially based on two core pillars, 
 mainly, CLIP and FAISS.
@@ -42,6 +44,8 @@ to project the language and image features into the same space, and retrieving t
 frames using an index search.
 
 ## Model Architecture
+
+![hopenew](https://github.com/user-attachments/assets/6dfcbdc8-0fd3-4b60-bc3f-d7eebb5794d4)
 
 A recent ECCV submission made by researchers at Tencent, *ST-LLM: Large Language Models Are Effective Temporal Learners* deliberated over the spatio-temporal reasoning abilities of
 LLMs without explicitly defining Temporal Adapters or carrying out extensive pre-training tasks. The results of the paper were quite commendable, with the model beating several existingvideo-large language models on several VideoQA benchmarks such as MSVD-QA, MVBench,
