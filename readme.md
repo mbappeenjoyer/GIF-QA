@@ -56,3 +56,15 @@ pre-trained Q-Former of BLIP2. We then use a linear layer to project the image f
 features before the question, and let our model predict the response.
 
 
+### New Loss function for improved training
+
+We implemented the Masked Video Modelling loss that was described in the paper. The masked language modeling loss aims to improve the spatio-temporal understanding of LLMs while simultaneously using its semantic powers. During training, we randomly mask a certain sample of the frame tokens that have been generated. Using these masked tokens, we generate an output after a forward pass through the language head, and label it fllm(I) Then, we conduct an extra forward pass through the language model, and label this outcome as fllm(I’).
+
+![eqn](https://github.com/user-attachments/assets/6da7178d-9486-4961-886b-1b0908ac182b)
+
+We then consider the last hidden state of the LLM, and the loss is then computed as the RMSE loss obtained from the unmasked positions of the image tokens, i.e,
+
+
+
+
+
