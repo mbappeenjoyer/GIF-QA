@@ -28,16 +28,15 @@ class GIFFrameRetriever():
             reshaped_frame=cv2.resize(frame,(512,512))
             rgb_frame = cv2.cvtColor(reshaped_frame, cv2.COLOR_BGR2RGB)
             frames.append(rgb_frame)
+
         cap.release()
+        frames = frames[::2]
         return frames
 
     def create_faiss_index(self, frames, model, preprocess, device):
         index = faiss.IndexFlatL2(model.visual.output_dim)  
         images = torch.stack([preprocess(Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))).unsqueeze(0).to(device) for frame in frames])
         images = images.reshape(-1, *images.shape[2:])
-        # for i in range(len(frames)//5):
-        #     ind = 5*i
-        #     n_ind = min(len(frames), 5*(i+1))
         with torch.no_grad():
             image_features = model.encode_image(images[:len(images)]).to(dtype=torch.float32) 
             index.add(image_features.cpu().numpy())
